@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Preservation</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f4f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to right, #8e44ad, #c0392b);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.1em;
+            font-weight: lighter;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav .nav-links a:hover {
+            color: #8e44ad;
+        }
+
+        nav .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav .explore-button, nav .login-button {
+            background: #8e44ad;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav .explore-button:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
+
+        nav .login-button:hover {
+            background: #d35400;
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 100px 20px;
+            background: url('img.jpg') no-repeat center center / cover;
+            color: white;
+            position: relative;
+            text-align: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero a {
+            display: inline-block;
+            background: #c0392b;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .hero a:hover {
+            background-color: #8e44ad;
+            transform: scale(1.1);
+        }
+
+        /* About Section */
+        #about {
+            padding: 60px 20px;
+            background: #f3f1ef;
+            text-align: center;
+        }
+
+        #about h3 {
+            font-size: 2em;
+            color: #8e44ad;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background: #8e44ad;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            nav .nav-links {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            nav .nav-links a {
+                margin-bottom: 10px;
+            }
+
+            .hero a {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+
+            #about h3 {
+                font-size: 1.8em;
+            }
+
+            #about p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav .explore-button, nav .login-button {
+                width: 100%;
+                text-align: center;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Preserving Cultural Costumes and Textiles</h1>
+        <p>Explore the beauty of traditional costumes and the history of textile arts.</p>
+    </header>
+    <nav>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="about.html">About Us</a>
+        </div>
+        <div class="button-group">
+            <a href="exp costumes.html" class="explore-button">Explore Costumes</a>
+            <a href="login.html" class="login-button">Login</a>
+        </div>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the Rich Heritage of Global Textiles</h1>
+            <a href="explore more.html">Start Exploring</a>
+        </div>
+    </section>
+    <section id="about">
+        <h3>About Our Mission</h3>
+        <p>
+            Our platform celebrates the rich history and artistry of cultural costumes and textiles. Dive deep into the stories of artisans, traditions, and the evolution of textile design from across the globe.
+        </p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Cultural Preservation. All rights reserved.</p>
+    </footer>
+</body>
+</html>

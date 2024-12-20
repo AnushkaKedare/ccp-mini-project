@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#camera-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#clothes-container {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    transform: translateX(-30%);
+    z-index: 1;
+    top: calc(50% - 100px); /* Adjust to place the overlay relative to the button */
+
+}
+
+#clothes-overlay {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    z-index: 1;
+}

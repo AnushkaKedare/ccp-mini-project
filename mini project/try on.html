@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Try-On</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff5733, #c70039);
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .try-on-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .try-on-container h2 {
+            font-size: 1.8em;
+            color: #c70039;
+        }
+
+        .try-on-container p {
+            font-size: 1em;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .upload-area {
+            margin: 30px 0;
+        }
+
+        .upload-area button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ff5733;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-area button:hover {
+            background-color: #c70039;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Virtual Try-On</h1>
+    </header>
+
+    <section class="try-on-container">
+        <h2>How It Works</h2>
+        <p>
+            Experience the magic of traditional costumes through our Virtual Try-On feature. 
+        </p>
+
+        <div class="upload-area">
+            <button onclick="startTryOn()">Start Virtual Try-On</button>
+        </div>
+
+        <!-- Embedded Video Feed -->
+        <iframe id="try-on-frame" src="" style="display: none;"></iframe>
+    </section>
+
+    <script>
+        function startTryOn() {
+            const iframe = document.getElementById("try-on-frame");
+            iframe.src = "http://127.0.0.1:5000/"; // Point to the Flask server
+            iframe.style.display = "block";
+        }
+    </script>
+</body>
+</html>

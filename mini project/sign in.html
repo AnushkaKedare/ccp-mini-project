@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-Up Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #62e1a8, #76efed);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .sign-up-container {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .sign-up-form h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    .input-group {
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #555;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f7f8fc;
+      color: #333;
+    }
+    .input-group input:focus {
+      border-color: #6a11cb;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+      transform: scale(1.05);
+    }
+    .login-link {
+      margin-top: 1rem;
+    }
+    .login-link a {
+      color: #2575fc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+    input:focus {
+      border: 1px solid #2575fc;
+      transition: border 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="sign-up-container">
+    <form class="sign-up-form"> 
+      <h1>Create Account</h1>
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit">Sign Up</button>
+      <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+    </form>
+  </div>
+</body>
+</html>

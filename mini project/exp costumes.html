@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Costumes - India</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f4f0;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #8e44ad, #c0392b);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        /* Dropdown Style */
+        select {
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        select:hover, select:focus {
+            border-color: #aa3ab7;
+            outline: none;
+        }
+
+        /* Search Bar */
+        .search-container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-container input {
+            flex: 1;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-container input:focus {
+            border-color: #a842d0;
+            outline: none;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background: #a842d0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+
+        .search-container button:hover {
+            background: #a842d0;
+        }
+
+        /* Costume Grid */
+        .costume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .costume-card {
+            background: #f3f1ef;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+        }
+
+        .costume-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .costume-card h3 {
+            margin: 10px 0;
+            color: #a842d0;
+        }
+
+        .costume-card p {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 20px;
+            }
+
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .search-container {
+                margin-top: 15px;
+                width: 100%;
+            }
+
+            .costume-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .search-container input, .search-container button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 20px 15px;
+            }
+
+            .filter-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .costume-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+
+            .costume-card {
+                padding: 10px;
+            }
+
+            .search-container input, .search-container button {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore Costumes of India</h1>
+    </header>
+    <div class="container">
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <select id="region">
+                <option value="">Select Region</option>
+                <option value="north">North India</option>
+                <option value="south">South India</option>
+                <option value="east">East India</option>
+                <option value="west">West India</option>
+            </select>
+            <select id="costume-type">
+                <option value="">Select Costume Type</option>
+                <option value="traditional">Traditional</option>
+                <option value="festive">Festive</option>
+                <option value="bridal">Bridal</option>
+            </select>
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Search for Indian costumes...">
+                <button onclick="searchCostumes()">Search</button>
+            </div>
+        </div>
+        <!-- Costume Grid -->
+        <div class="costume-grid" id="costume-grid">
+            <!-- Example Costumes -->
+            <div class="costume-card">
+                <img src="banarsi.webp" alt="Banarasi Saree">
+                <h3>Banarasi Saree</h3>
+                <p>Luxurious sarees from Varanasi with intricate zari work.</p>
+            </div>
+            <div class="costume-card">
+                <img src="kanjivaram.jpg" alt="Kanjivaram Saree">
+                <h3>Kanjivaram Saree</h3>
+                <p>Silk sarees from Tamil Nadu, perfect for weddings and festivals.</p>
+            </div>
+            <div class="costume-card">
+                <img src="punjabi.jpg" alt="Punjabi Phulkari">
+                <h3>Punjabi Phulkari</h3>
+                <p>Brightly embroidered dupattas from Punjab.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchCostumes() {
+            const searchQuery = document.getElementById('search-bar').value.toLowerCase();
+            const region = document.getElementById('region').value.toLowerCase();
+            const type = document.getElementById('costume-type').value.toLowerCase();
+
+            const cards = document.querySelectorAll('.costume-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                if (
+                    (searchQuery === '' || title.includes(searchQuery) || description.includes(searchQuery)) &&
+                    (region === '' || title.includes(region)) &&
+                    (type === '' || description.includes(type))
+                ) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

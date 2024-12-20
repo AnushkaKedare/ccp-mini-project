@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Try-On Clothes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='script.css') }}">
+</head>
+<body>
+    <h1>Virtual Try-On Clothes</h1>
+
+    <!-- Camera Feed -->
+    <div id="camera-container">
+        <video id="video" width="640" height="480" autoplay></video>
+    </div>
+
+    <!-- Clothes Overlay -->
+    <div id="clothes-container">
+        <img id="clothes-overlay" src="{{ url_for('static', filename='clothes1.png') }}" style="position: absolute;">
+    </div>
+
+    <!-- Buttons to Change Clothes -->
+    <button onclick="changeClothes('clothes1.png')">Try Banarasi Saree</button>
+    <button onclick="changeClothes('clothes2.png')">Try Kanjivaram Saree</button>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>

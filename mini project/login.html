@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual Login System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #ff5733, #c70039);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background: #fff;
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-around;
+            background-color: #c70039;
+            padding: 10px 0;
+        }
+
+        .header button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 20px;
+            outline: none;
+        }
+
+        .header button.active {
+            background-color: #ff5733;
+            border-bottom: 2px solid #fff;
+        }
+
+        .form-container {
+            position: relative;
+            width: 200%;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        form {
+            background-color: #fff;
+            width: 100%;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #c70039;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button.submit-btn, button.signup-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #c70039;
+            border: none;
+            color: #fff;
+            font-size: 1.1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button.submit-btn:hover, button.signup-btn:hover {
+            background-color: #ff5733;
+        }
+
+        button.signup-btn {
+            background-color: #555;
+        }
+
+        button.signup-btn:hover {
+            background-color: #777;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .header button {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+
+            form {
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            input {
+                padding: 10px;
+            }
+
+            button.submit-btn, button.signup-btn {
+                font-size: 1em;
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header button {
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            input {
+                padding: 12px;
+            }
+
+            button.submit-btn, button.signup-btn {
+                font-size: 0.9em;
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <button id="vendorBtn" class="active" onclick="showVendor()">Vendor Login</button>
+            <button id="userBtn" onclick="showUser()">User Login</button>
+        </div>
+
+        <div class="form-container" id="formContainer">
+            <form id="vendorForm">
+                <h2>Vendor Login</h2>
+                <div class="form-group">
+                    <label for="vendorEmail">Email</label>
+                    <input type="email" id="vendorEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="vendorPassword">Password</label>
+                    <input type="password" id="vendorPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login as Vendor</button>
+                <button type="button" class="signup-btn" onclick="location.href='vendor-signup.html'"><a href="sign in.html">Sign Up</a></button>
+            </form>
+
+            <form id="userForm">
+                <form id="vendorForm">
+                    <h2>User Login</h2>
+                    <div class="form-group">
+                        <label for="userEmail">Email</label>
+                        <input type="email" id="userEmail" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userPassword">Password</label>
+                        <input type="password" id="userPassword" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Login as user</button>
+                    <button type="button" class="signup-btn" onclick="location.href='user-signup.html'"><a href="sign in.html">Sign Up</a></button>
+                </form>
+        </div>
+    </div>
+
+    <script>
+        const formContainer = document.getElementById('formContainer');
+        const vendorBtn = document.getElementById('vendorBtn');
+        const userBtn = document.getElementById('userBtn');
+
+        function showVendor() {
+            formContainer.style.transform = 'translateX(0%)';
+            vendorBtn.classList.add('active');
+            userBtn.classList.remove('active');
+        }
+
+        function showUser() {
+            formContainer.style.transform = 'translateX(-50%)';
+            userBtn.classList.add('active');
+            vendorBtn.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
